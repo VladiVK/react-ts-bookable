@@ -1,4 +1,5 @@
 import Navbar from './navbar';
 import Footer from './footer';
 import UserPicker from './userPicker';
-export { Navbar, Footer, UserPicker };
+import NavbarLinks from './navbarLinks';
+export { Navbar, NavbarLinks, Footer, UserPicker };

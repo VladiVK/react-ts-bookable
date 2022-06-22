@@ -1,7 +1,11 @@
 import React from 'react';
 
 const UserPicker = () => {
-  return <div>UserPicker</div>;
+  return (
+    <select>
+      <option value=''>Users</option>
+    </select>
+  );
 };
 
 export default UserPicker;
