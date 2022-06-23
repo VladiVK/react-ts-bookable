@@ -5,8 +5,10 @@
   --clr-main-bg: #f5f5f5;
   --clr-white: #fff;
   --clr-orange: #ff7817;
+  --clr-orange-light: hsla(25, 100%, 54%, 0.68);
   --clr-green: #07cb79;
-  --clr-green-light: hsla(155, 93%, 41%, 0.21);
+  --clr-green-light-1: hsla(155, 93%, 41%, 0.21);
+  --clr-green-light-2: hsla(155, 93%, 41%, 0.63);
   --clr-black: #222;
   --clr-grey: #989898;
 

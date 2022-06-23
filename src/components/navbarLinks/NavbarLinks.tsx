@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { links } from '../../utils/constants';
-
+import { NavbarLinksWrapper } from './style';
 const NavbarLinks = () => {
   return (
-    <ul>
+    <NavbarLinksWrapper>
       {links.map((link) => {
         return (
           <li key={link.id}>
@@ -15,7 +15,7 @@ const NavbarLinks = () => {
           </li>
         );
       })}
-    </ul>
+    </NavbarLinksWrapper>
   );
 };
 

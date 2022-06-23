@@ -1,10 +1,12 @@
 import React from 'react';
-
+import { UserPickerWrapper } from './style';
 const UserPicker = () => {
   return (
-    <select>
-      <option value=''>Users</option>
-    </select>
+    <UserPickerWrapper>
+      <select className='picker'>
+        <option value=''>Users</option>
+      </select>
+    </UserPickerWrapper>
   );
 };
 
