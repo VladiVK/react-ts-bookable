@@ -54,6 +54,9 @@ a {
 hr {
   border: none;
   border-top: 1px solid var(--clr-grey);
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0.5rem auto;
 }
 h1,
 h2,

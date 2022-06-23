@@ -4,7 +4,7 @@ import { links } from '../../utils/constants';
 
 const NavbarLinks = () => {
   return (
-    <>
+    <ul>
       {links.map((link) => {
         return (
           <li key={link.id}>
@@ -15,8 +15,7 @@ const NavbarLinks = () => {
           </li>
         );
       })}
-      ;
-    </>
+    </ul>
   );
 };
 
