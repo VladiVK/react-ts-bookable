@@ -21,7 +21,9 @@ const Navbar = () => {
             <FaBars />
           </button>
           <NavbarLinks />
-          <UserPicker />
+          <div className='nav__users'>
+            <UserPicker />
+          </div>
         </div>
       </NavbarWrapper>
       <hr />

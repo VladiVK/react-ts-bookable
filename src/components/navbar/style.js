@@ -34,9 +34,16 @@ export const NavbarWrapper = styled.nav`
     }
   }
 
+  .nav__users {
+    display: none;
+  }
+
   @media (min-width: 992px) {
     .nav__toggle {
       display: none;
+    }
+    .nav__users {
+      display: block;
     }
   }
 `;
