@@ -8,8 +8,12 @@ import Logo from '../../assets/icons/main-logo.svg';
 import { FaBars } from 'react-icons/fa';
 // Styles
 import { NavbarWrapper } from './style';
+import { useAppDispatch } from '../../hooks/hooks';
+import { openStdin } from 'process';
+import { openSidebar } from '../../store/navigationSlice/navigation_slice';
 
 const Navbar = () => {
+  const dispatch = useAppDispatch();
   return (
     <>
       <NavbarWrapper>
@@ -17,7 +21,10 @@ const Navbar = () => {
           <Link to='/'>
             <img className='nav__logo' src={Logo} alt='bookable logotype' />
           </Link>
-          <button className='nav__toggle'>
+          <button
+            className='nav__toggle'
+            onClick={() => dispatch(openSidebar())}
+          >
             <FaBars />
           </button>
           <NavbarLinks />

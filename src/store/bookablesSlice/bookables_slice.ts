@@ -17,6 +17,8 @@ type BookablesState = {
   bookableIndex: number;
   bookables: BookableUI[];
   bookablesInGroup: BookableUI[];
+  bookable: BookableUI;
+  hasDetails: boolean;
 };
 const initialState: BookablesState = {
   groups: [...new Set(bookables.map((b) => b.group))],
@@ -24,6 +26,8 @@ const initialState: BookablesState = {
   bookableIndex: 0,
   bookables: bookables,
   bookablesInGroup: [],
+  bookable: {} as BookableUI,
+  hasDetails: false,
 };
 
 export const bookablesSlice = createSlice({
@@ -49,6 +53,13 @@ export const bookablesSlice = createSlice({
     resetBookableIndex: (state) => {
       state.bookableIndex = 0;
     },
+    setBookable: (state) => {
+      state.bookable = state.bookablesInGroup[state.bookableIndex];
+      state.bookable.days = state.bookable.days.sort((a, b) => a - b);
+    },
+    changeDetailsStatus: (state) => {
+      state.hasDetails = !state.hasDetails;
+    },
   },
 });
 
@@ -58,5 +69,7 @@ export const {
   setNextBookableIndex,
   setBookableIndex,
   resetBookableIndex,
+  setBookable,
+  changeDetailsStatus,
 } = bookablesSlice.actions;
 export default bookablesSlice.reducer;
