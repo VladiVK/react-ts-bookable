@@ -1,10 +1,11 @@
 import React from 'react';
+import { BookablesList } from '../../components';
 import { BookablesPageWrapper } from './style';
 const BookablePage = () => {
   return (
     <BookablesPageWrapper className='container-center'>
       <div className='bookables-page__content'>
-        <h1>Bookables Page</h1>
+        <BookablesList />
       </div>
     </BookablesPageWrapper>
   );

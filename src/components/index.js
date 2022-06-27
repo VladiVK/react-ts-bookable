@@ -3,4 +3,5 @@ import Footer from './footer';
 import UserPicker from './userPicker';
 import NavbarLinks from './navbarLinks';
 import Sidebar from './sidebar';
-export { Navbar, NavbarLinks, Footer, UserPicker, Sidebar };
+import BookablesList from './bokkablesList';
+export { Navbar, NavbarLinks, Footer, UserPicker, Sidebar, BookablesList };
