@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-
+import bookablesReducer from './bookablesSlice/bookables_slice';
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    bookables: bookablesReducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
