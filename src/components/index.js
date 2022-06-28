@@ -4,4 +4,16 @@ import UserPicker from './userPicker';
 import NavbarLinks from './navbarLinks';
 import Sidebar from './sidebar';
 import BookablesList from './bokkablesList';
-export { Navbar, NavbarLinks, Footer, UserPicker, Sidebar, BookablesList };
+import UsersList from './usersList';
+import UserDetail from './userDetails';
+
+export {
+  Navbar,
+  NavbarLinks,
+  Footer,
+  UserPicker,
+  Sidebar,
+  BookablesList,
+  UserDetail,
+  UsersList,
+};
