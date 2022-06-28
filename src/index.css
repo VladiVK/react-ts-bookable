@@ -3,6 +3,7 @@
 :root {
   /* accent colors */
   --clr-main-bg: #f5f5f5;
+  /* --clr-main-bg: #fff; */
   --clr-white: #fff;
   --clr-orange: #ff7817;
   --clr-orange-light: hsla(25, 100%, 54%, 0.68);

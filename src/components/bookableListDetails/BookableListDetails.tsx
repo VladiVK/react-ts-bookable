@@ -26,7 +26,7 @@ const BookableListDetails = () => {
           </span>
         </div>
 
-        <p>{bookable.notes}</p>
+        <p className='details__item--notes'>{bookable.notes}</p>
 
         {hasDetails && (
           <div className='details__item--specialities'>

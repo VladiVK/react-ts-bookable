@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavbarWrapper = styled.nav`
-  height: 5rem;
+  height: var(--navbar-height);
   display: flex;
   align-items: center;
   justify-content: center;
