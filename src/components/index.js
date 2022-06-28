@@ -5,7 +5,7 @@ import NavbarLinks from './navbarLinks';
 import Sidebar from './sidebar';
 import BookablesList from './bokkablesList';
 import UsersList from './usersList';
-import UserDetail from './userDetails';
+import UserDetails from './userDetails';
 
 export {
   Navbar,
@@ -14,6 +14,6 @@ export {
   UserPicker,
   Sidebar,
   BookablesList,
-  UserDetail,
+  UserDetails,
   UsersList,
 };

@@ -1,2 +1,2 @@
-import UserDetail from './UserDetail';
-export default UserDetail;
+import UserDetails from './UserDetails';
+export default UserDetails;

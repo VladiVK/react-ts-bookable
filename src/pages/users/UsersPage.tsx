@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserDetail, UsersList } from '../../components';
+import { UserDetails, UsersList } from '../../components';
 import { UsersPageWrapper } from './style';
 
 const UsersPage = () => {
@@ -7,7 +7,7 @@ const UsersPage = () => {
     <UsersPageWrapper className='container-center page-100-vh'>
       <div className='page-content'>
         <UsersList />
-        <UserDetail />
+        <UserDetails />
       </div>
     </UsersPageWrapper>
   );

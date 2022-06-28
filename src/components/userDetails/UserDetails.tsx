@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppSelector } from '../../hooks/hooks';
 import { UserDetailsWrapper } from './style';
 
-const UserDetail = () => {
+const UserDetails = () => {
   const { selectedUser } = useAppSelector((state) => state.users);
   const { name, title, notes } = selectedUser;
   return (
@@ -16,4 +16,4 @@ const UserDetail = () => {
   );
 };
 
-export default UserDetail;
+export default UserDetails;
