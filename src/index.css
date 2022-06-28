@@ -20,6 +20,9 @@
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+
+  --navbar-height: 5rem;
+  --footer-height: 5rem;
 }
 /* GLOBAL STYLES */
 
@@ -126,6 +129,11 @@ p {
   width: 90vw;
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+.page-100-vh {
+  margin-top: 2rem;
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
 }
 
 @keyframes spinner {
