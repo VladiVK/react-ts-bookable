@@ -18,9 +18,9 @@ const UsersList = () => {
     dispatch(setUsers(fetchedUsers));
   }, []);
 
-  //   useEffect(() => {
-  //     dispatch(setUser(usersID));
-  //   }, [usersID]);
+  useEffect(() => {
+    dispatch(setUser(usersID));
+  }, []);
 
   if (users.length < 1) {
     return <h1>Loading...</h1>;
