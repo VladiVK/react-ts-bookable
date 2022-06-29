@@ -37,8 +37,6 @@ const BookablesList = () => {
 
   return (
     <BookablesListWrapper>
-      {/* Groups */}
-
       <div className='bookables__group-container'>
         <select
           value={selectedGroup}
@@ -82,8 +80,6 @@ const BookablesList = () => {
           </button>
         </p>
       </div>
-      {/* Details */}
-      {bookable && <BookableListDetails />}
     </BookablesListWrapper>
   );
 };

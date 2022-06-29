@@ -7,6 +7,9 @@ import { BookableListDetailsWrapper } from './style';
 const BookableListDetails = () => {
   const dispatch = useAppDispatch();
   const { bookable, hasDetails } = useAppSelector((state) => state.bookables);
+  if (Object.keys(bookable).length === 0) {
+    return null;
+  }
   return (
     <BookableListDetailsWrapper>
       <div className='details__item'>
