@@ -6,6 +6,7 @@ import Sidebar from './sidebar';
 import BookablesList from './bokkablesList';
 import UsersList from './usersList';
 import UserDetails from './userDetails';
+import WeekPeaker from './weekPeaker';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   BookablesList,
   UserDetails,
   UsersList,
+  WeekPeaker,
 };

@@ -55,6 +55,7 @@ export const bookablesSlice = createSlice({
     },
     setBookable: (state) => {
       state.bookable = state.bookablesInGroup[state.bookableIndex];
+
       state.bookable.days = state.bookable.days.sort((a, b) => a - b);
     },
     changeDetailsStatus: (state) => {

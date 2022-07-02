@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { BookablesListWrapper } from './style';
-import { days, sessions } from '../../utils/static.json';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import {
   changeGroup,
@@ -10,10 +9,7 @@ import {
   setBookableIndex,
   resetBookableIndex,
   setBookable,
-  changeDetailsStatus,
 } from '../../store/bookablesSlice/bookables_slice';
-// Components
-import BookableListDetails from '../bookableListDetails/BookableListDetails';
 
 const BookablesList = () => {
   const dispatch = useAppDispatch();
