@@ -3,6 +3,7 @@ import bookablesReducer from './bookablesSlice/bookables_slice';
 import navigationReducer from './navigationSlice/navigation_slice';
 import usersReducer from './usersSlice/users_slice';
 import bookinsReducer from './bookingsSlice/bookings_slice';
+
 export const store = configureStore({
   reducer: {
     bookables: bookablesReducer,

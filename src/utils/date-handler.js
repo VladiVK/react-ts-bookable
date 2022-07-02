@@ -1,6 +1,7 @@
 export const addDays = (date, daysToAdd) => {
   const clone = new Date(date.getTime());
   clone.setDate(clone.getDate() + daysToAdd);
+
   return clone;
 };
 
@@ -18,6 +19,3 @@ export const getWeek = (forDate, daysOffset = 0) => {
 
 const today = new Date();
 const week = getWeek(today);
-
-console.log('today: ', today);
-console.log('week: ', week);

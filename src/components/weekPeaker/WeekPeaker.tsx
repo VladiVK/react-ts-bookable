@@ -18,13 +18,6 @@ const WeekPeaker = () => {
   const dispatch = useAppDispatch();
   const { week } = useAppSelector((state) => state.bookings);
 
-  useEffect(() => {
-    // pass current day
-    dispatch(today());
-  }, []);
-
-
-
   return (
     <WeekPeakerWrapper>
       <div className='date-peaker'>
