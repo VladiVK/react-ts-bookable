@@ -18,18 +18,17 @@ const BookablesList = () => {
     bookablesInGroup,
     groups,
     bookableIndex,
-    bookable,
-    hasDetails,
   } = useAppSelector((state) => state.bookables);
 
-  useEffect(() => {
-    dispatch(resetBookableIndex());
-    dispatch(updateBookablesInGroup());
-  }, [selectedGroup]);
+  // useEffect(() => {
+  //   dispatch(resetBookableIndex());
+  //   dispatch(updateBookablesInGroup());
+  //   dispatch(setBookable());
+  // }, [selectedGroup]);
 
-  useEffect(() => {
-    dispatch(setBookable());
-  }, [bookableIndex]);
+  // useEffect(() => {
+  //   dispatch(setBookable());
+  // }, [bookableIndex]);
 
   return (
     <BookablesListWrapper>

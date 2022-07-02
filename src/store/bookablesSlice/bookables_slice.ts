@@ -25,8 +25,10 @@ const initialState: BookablesState = {
   selectedGroup: 'Kit',
   bookableIndex: 0,
   bookables: bookables,
-  bookablesInGroup: [],
-  bookable: {} as BookableUI,
+  bookable: bookables[0],
+  bookablesInGroup: bookables.filter((b) => b.group === 'Kit'),
+  // bookablesInGroup: [],
+  // bookable: {} as BookableUI,
   hasDetails: false,
 };
 
@@ -36,6 +38,13 @@ export const bookablesSlice = createSlice({
   reducers: {
     changeGroup: (state, { payload }: PayloadAction<string>) => {
       state.selectedGroup = payload;
+      // new
+      state.bookablesInGroup = state.bookables.filter(
+        (b) => b.group === state.selectedGroup
+      );
+      state.bookableIndex = 0;
+      // new
+      state.bookable = state.bookablesInGroup[state.bookableIndex];
     },
     updateBookablesInGroup: (state) => {
       state.bookablesInGroup = bookables.filter(
@@ -49,9 +58,13 @@ export const bookablesSlice = createSlice({
 
     setBookableIndex: (state, { payload }: PayloadAction<number>) => {
       state.bookableIndex = payload;
+      // new
+      state.bookable = state.bookablesInGroup[state.bookableIndex];
     },
     resetBookableIndex: (state) => {
       state.bookableIndex = 0;
+      // new
+      state.bookable = state.bookablesInGroup[state.bookableIndex];
     },
     setBookable: (state) => {
       state.bookable = state.bookablesInGroup[state.bookableIndex];
