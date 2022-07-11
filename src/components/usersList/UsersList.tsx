@@ -10,19 +10,23 @@ import { users as fetchedUsers } from '../../utils/static.json';
 
 const UsersList = () => {
   const dispatch = useAppDispatch();
-  const { users, selectedUser, usersID } = useAppSelector(
+  const { users, selectedUser, usersID, isLoading } = useAppSelector(
     (state) => state.users
   );
 
-  useEffect(() => {
-    dispatch(setUsers(fetchedUsers));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(setUsers(fetchedUsers));
+  // }, []);
 
-  useEffect(() => {
-    dispatch(setUser(usersID));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(setUser(usersID));
+  // }, []);
 
-  if (users.length < 1) {
+  // if (users.length < 1) {
+  //   return <h1>Loading...</h1>;
+  // }
+
+  if (isLoading) {
     return <h1>Loading...</h1>;
   }
   return (
