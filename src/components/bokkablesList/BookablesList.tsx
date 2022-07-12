@@ -9,26 +9,24 @@ import {
   setBookableIndex,
   resetBookableIndex,
   setBookable,
+  fetchBookables,
 } from '../../store/bookablesSlice/bookables_slice';
 
 const BookablesList = () => {
+  // initially we fetch bookables in Navbar because that was static when routing
   const dispatch = useAppDispatch();
   const {
     selectedGroup,
     bookablesInGroup,
     groups,
     bookableIndex,
+    isLoading,
+    error,
   } = useAppSelector((state) => state.bookables);
 
-  // useEffect(() => {
-  //   dispatch(resetBookableIndex());
-  //   dispatch(updateBookablesInGroup());
-  //   dispatch(setBookable());
-  // }, [selectedGroup]);
-
-  // useEffect(() => {
-  //   dispatch(setBookable());
-  // }, [bookableIndex]);
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <BookablesListWrapper>

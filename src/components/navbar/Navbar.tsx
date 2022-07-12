@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Components
 import NavbarLinks from '../navbarLinks';
@@ -9,11 +9,17 @@ import { FaBars } from 'react-icons/fa';
 // Styles
 import { NavbarWrapper } from './style';
 import { useAppDispatch } from '../../hooks/hooks';
-import { openStdin } from 'process';
 import { openSidebar } from '../../store/navigationSlice/navigation_slice';
+
+import { fetchBookables } from '../../store/bookablesSlice/bookables_slice';
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBookables());
+  }, []);
+
   return (
     <>
       <NavbarWrapper>
