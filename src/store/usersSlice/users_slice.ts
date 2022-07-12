@@ -18,7 +18,7 @@ type UsersState = {
 
 // users  initially load in navbar : <UserPicker> component
 const initialState: UsersState = {
-  users: [],
+  users: [] as UserUI[],
   selectedUser: {} as UserUI,
   usersID: 1,
   isLoading: false,

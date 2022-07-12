@@ -5,8 +5,9 @@ import {
   setUsers,
   setUsersID,
 } from '../../store/usersSlice/users_slice';
-import { UsersListWrapper } from './style';
+import { UsersListWrapper, SpinnerWrapper } from './style';
 import { users as fetchedUsers } from '../../utils/static.json';
+import { FaSpinner } from 'react-icons/fa';
 
 const UsersList = () => {
   const dispatch = useAppDispatch();
@@ -27,7 +28,13 @@ const UsersList = () => {
   // }
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <SpinnerWrapper>
+        <span className='spinner'>
+          <FaSpinner className='spinner__icon' />
+        </span>
+      </SpinnerWrapper>
+    );
   }
   return (
     <UsersListWrapper>
