@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { UserUI, fetchUsers } from '../../store/usersSlice/users_slice';
-import { UserPickerWrapper, SpinnerWrapper } from './style';
+import Loader from '../loader';
+import { UserPickerWrapper } from './style';
 
 const UserPicker = () => {
   const { users, isLoading, error } = useAppSelector((state) => state.users);
@@ -13,13 +14,7 @@ const UserPicker = () => {
   }, []);
 
   if (isLoading) {
-    return (
-      <SpinnerWrapper>
-        <span className='spinner'>
-          <FaSpinner className='spinner__icon' />
-        </span>
-      </SpinnerWrapper>
-    );
+    return <Loader size='small' />;
   }
 
   return (

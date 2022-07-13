@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import {
-  setUser,
-  setUsers,
-  setUsersID,
-} from '../../store/usersSlice/users_slice';
-import { UsersListWrapper, SpinnerWrapper } from './style';
-import { users as fetchedUsers } from '../../utils/static.json';
-import { FaSpinner } from 'react-icons/fa';
+import { setUser, setUsersID } from '../../store/usersSlice/users_slice';
+import { UsersListWrapper } from './style';
+
+import Loader from '../loader';
 
 const UsersList = () => {
   const dispatch = useAppDispatch();
@@ -15,26 +11,8 @@ const UsersList = () => {
     (state) => state.users
   );
 
-  // useEffect(() => {
-  //   dispatch(setUsers(fetchedUsers));
-  // }, []);
-
-  // useEffect(() => {
-  //   dispatch(setUser(usersID));
-  // }, []);
-
-  // if (users.length < 1) {
-  //   return <h1>Loading...</h1>;
-  // }
-
   if (isLoading) {
-    return (
-      <SpinnerWrapper>
-        <span className='spinner'>
-          <FaSpinner className='spinner__icon' />
-        </span>
-      </SpinnerWrapper>
-    );
+    return <Loader size='medium' />;
   }
   return (
     <UsersListWrapper>

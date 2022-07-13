@@ -16,9 +16,9 @@ import { fetchBookables } from '../../store/bookablesSlice/bookables_slice';
 const Navbar = () => {
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(fetchBookables());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchBookables());
+  // }, []);
 
   return (
     <>

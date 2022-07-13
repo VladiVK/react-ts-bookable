@@ -15,27 +15,3 @@ export const UserPickerWrapper = styled.div`
     cursor: pointer;
   }
 `;
-
-export const SpinnerWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .spinner__icon {
-    animation: spin 1.5s linear infinite;
-    color: var(--clr-green);
-    font-size: 24px;
-  }
-`;

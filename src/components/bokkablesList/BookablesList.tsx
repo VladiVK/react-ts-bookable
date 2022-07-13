@@ -11,6 +11,7 @@ import {
   setBookable,
   fetchBookables,
 } from '../../store/bookablesSlice/bookables_slice';
+import Loader from '../loader';
 
 const BookablesList = () => {
   // initially we fetch bookables in Navbar because that was static when routing
@@ -25,7 +26,7 @@ const BookablesList = () => {
   } = useAppSelector((state) => state.bookables);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Loader size='medium' />;
   }
 
   return (

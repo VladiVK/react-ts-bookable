@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
+import { useAppDispatch } from './hooks/hooks';
+import { fetchBookables } from './store/bookablesSlice/bookables_slice';
 
 // Pages
 import {
@@ -11,6 +14,11 @@ import {
 } from './pages';
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBookables());
+  }, []);
   return (
     <div>
       <Routes>

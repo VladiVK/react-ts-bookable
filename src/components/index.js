@@ -7,6 +7,7 @@ import BookablesList from './bokkablesList';
 import UsersList from './usersList';
 import UserDetails from './userDetails';
 import WeekPeaker from './weekPeaker';
+import Loader from './loader';
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   UserDetails,
   UsersList,
   WeekPeaker,
+  Loader,
 };
