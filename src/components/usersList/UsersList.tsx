@@ -33,7 +33,7 @@ const UsersList = () => {
                 type='button'
                 onClick={() => {
                   dispatch(setUser(id));
-                  dispatch(setUsersID(id));
+                  // dispatch(setUsersID(id));
                 }}
               >
                 {name}

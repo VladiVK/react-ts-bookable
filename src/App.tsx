@@ -12,13 +12,16 @@ import {
   ErrorPage,
   SharedLayout,
 } from './pages';
+import { fetchUsers } from './store/usersSlice/users_slice';
 
 function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(fetchUsers());
     dispatch(fetchBookables());
   }, []);
+
   return (
     <div>
       <Routes>

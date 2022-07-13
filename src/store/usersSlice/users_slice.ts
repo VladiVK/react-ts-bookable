@@ -57,6 +57,7 @@ export const usersSlice = createSlice({
       let newUser = state.users.find((user) => user.id === payload);
       if (!newUser) newUser = state.users[0];
       state.selectedUser = newUser;
+      state.usersID = payload;
     },
     setUsersID: (state, { payload }) => {
       state.usersID = payload;
