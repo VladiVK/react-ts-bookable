@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { HiOutlinePresentationChartBar as ScreenIcon } from 'react-icons/hi';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { days, sessions } from '../../utils/static.json';
-import { changeDetailsStatus } from '../../store/bookablesSlice/bookables_slice';
+import {
+  changeDetailsStatus,
+  setNextBookableIndex,
+  startPresentation,
+  stopPresentation,
+} from '../../store/bookablesSlice/bookables_slice';
 import { BookableListDetailsWrapper } from './style';
 
 const BookableListDetails = () => {
   const dispatch = useAppDispatch();
-  const { bookable, hasDetails } = useAppSelector((state) => state.bookables);
+  const { bookable, hasDetails, isPresentation } = useAppSelector(
+    (state) => state.bookables
+  );
+  // const timerRef = useRef<ReturnType<typeof setInterval>>();
+  // useEffect(() => {
+  //   timerRef.current = setInterval(() => {
+  //     dispatch(setNextBookableIndex());
+  //   }, 3000);
+
+  //   return () => clearInterval(timerRef.current);
+  // });
+
   if (Object.keys(bookable).length === 0) {
     return null;
   }
@@ -15,18 +32,34 @@ const BookableListDetails = () => {
       <div className='details__item'>
         <div className='details__item--header'>
           <h2 className='details__item--title'>{bookable.title}</h2>
-          <span className='details__item--controls'>
-            <label htmlFor='details'>
-              <input
-                type='checkbox'
-                name='details'
-                id='details'
-                checked={hasDetails}
-                onChange={() => dispatch(changeDetailsStatus())}
-              />
-              show details
-            </label>
-          </span>
+          <div className='details__item--content'>
+            <span className='details__item--controls'>
+              <label htmlFor='details'>
+                <input
+                  type='checkbox'
+                  name='details'
+                  id='details'
+                  checked={hasDetails}
+                  onChange={() => dispatch(changeDetailsStatus())}
+                />
+                show details
+              </label>
+            </span>
+            {/* stop button */}
+            <button
+              className='btn details__item--stop-btn'
+              type='button'
+              // onClick={() => clearInterval(timerRef.current)}
+              onClick={() => {
+                isPresentation
+                  ? dispatch(stopPresentation())
+                  : dispatch(startPresentation());
+              }}
+            >
+              <span>{isPresentation ? 'stop' : 'start'}</span>
+              <ScreenIcon />
+            </button>
+          </div>
         </div>
 
         <p className='details__item--notes'>{bookable.notes}</p>

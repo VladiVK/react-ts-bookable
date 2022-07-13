@@ -13,10 +13,27 @@ export const BookableListDetailsWrapper = styled.div`
     color: var(--clr-orange);
     font-weight: 600;
   }
+  .details__item--content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+
+    @media (min-width: 992px) {
+      margin-bottom: none;
+    }
+  }
   .details__item--controls {
     display: block;
-    margin-bottom: 0.7rem;
     text-transform: capitalize;
+
+    margin-right: 1.5rem;
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     input {
       margin-right: 0.5rem;
@@ -26,6 +43,24 @@ export const BookableListDetailsWrapper = styled.div`
       margin-bottom: 0;
     }
   }
+  .details__item--stop-btn {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+
+    span {
+      margin-right: 5px;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+    &:hover {
+      color: var(--clr-green);
+      border: 1px solid var(--clr-green);
+    }
+  }
+
   .details__item--notes {
   }
   .details__item--specialities {

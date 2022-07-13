@@ -19,6 +19,7 @@ type BookablesState = {
   hasDetails: boolean;
   isLoading: boolean;
   error: null | string;
+  isPresentation: boolean;
 };
 const initialState: BookablesState = {
   isLoading: false,
@@ -30,6 +31,7 @@ const initialState: BookablesState = {
   bookable: {} as BookableUI,
   bookablesInGroup: [] as BookableUI[],
   hasDetails: false,
+  isPresentation: false,
 };
 
 export const fetchBookables = createAsyncThunk(
@@ -89,6 +91,12 @@ export const bookablesSlice = createSlice({
     changeDetailsStatus: (state) => {
       state.hasDetails = !state.hasDetails;
     },
+    startPresentation: (state) => {
+      state.isPresentation = true;
+    },
+    stopPresentation: (state) => {
+      state.isPresentation = false;
+    },
   },
   extraReducers: {
     [fetchBookables.pending.type]: (state) => {
@@ -123,5 +131,7 @@ export const {
   resetBookableIndex,
   setBookable,
   changeDetailsStatus,
+  startPresentation,
+  stopPresentation,
 } = bookablesSlice.actions;
 export default bookablesSlice.reducer;

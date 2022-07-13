@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { MutableRefObject, useEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { BookablesListWrapper } from './style';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
@@ -23,12 +23,26 @@ const BookablesList = () => {
     bookableIndex,
     isLoading,
     error,
+    isPresentation,
   } = useAppSelector((state) => state.bookables);
 
+  //  Start presentation
+  useEffect(() => {
+    let timerID: NodeJS.Timer;
+    if (isPresentation) {
+      timerID = setInterval(() => {
+        dispatch(setNextBookableIndex());
+      }, 3000);
+    }
+    return () => clearInterval(timerID);
+  }, [isPresentation]);
+
+  // Spinner
   if (isLoading) {
     return <Loader size='medium' />;
   }
 
+  // List
   return (
     <BookablesListWrapper>
       <div className='bookables__group-container'>
