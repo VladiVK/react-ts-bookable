@@ -37,6 +37,10 @@ const BookablesList = () => {
     return () => clearInterval(timerID);
   }, [isPresentation]);
 
+  // Button ref focus();
+
+  const nextButtonRef = useRef<HTMLButtonElement | null>(null);
+
   // Spinner
   if (isLoading) {
     return <Loader size='medium' />;
@@ -70,7 +74,10 @@ const BookablesList = () => {
               <button
                 type='button'
                 className='btn bookables__btn'
-                onClick={() => dispatch(setBookableIndex(i))}
+                onClick={() => {
+                  dispatch(setBookableIndex(i));
+                  if (nextButtonRef.current) nextButtonRef.current.focus();
+                }}
               >
                 {b.title}
               </button>
@@ -81,6 +88,8 @@ const BookablesList = () => {
           <button
             type='button'
             className='btn bokkables__btn--next'
+            ref={nextButtonRef}
+            autoFocus
             onClick={() => dispatch(setNextBookableIndex())}
           >
             <FaArrowRight />
